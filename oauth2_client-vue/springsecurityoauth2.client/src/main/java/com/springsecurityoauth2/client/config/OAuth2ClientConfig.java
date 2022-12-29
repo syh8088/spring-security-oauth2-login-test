@@ -44,7 +44,7 @@ public class OAuth2ClientConfig {
                 .cors().disable()
                 .formLogin().disable();
 
-        http.formLogin().loginPage("/login").loginProcessingUrl("/loginProc").defaultSuccessUrl("/").permitAll();
+        http.formLogin().loginPage("/login").loginProcessingUrl("/loginProc").defaultSuccessUrl("http://localhost:3000").permitAll();
         http.oauth2Login(oauth2 -> oauth2.userInfoEndpoint(
                 userInfoEndpointConfig -> userInfoEndpointConfig
                         .userService(customOAuth2UserService)  // OAuth2
