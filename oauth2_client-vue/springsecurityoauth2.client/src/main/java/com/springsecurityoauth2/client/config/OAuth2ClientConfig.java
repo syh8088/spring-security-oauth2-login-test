@@ -1,8 +1,8 @@
 package com.springsecurityoauth2.client.config;
 
-import io.security.oauth2.springsecurityoauth2.service.CustomOAuth2UserService;
-import io.security.oauth2.springsecurityoauth2.service.CustomOidcUserService;
-import io.security.oauth2.springsecurityoauth2.service.CustomUserDetailsService;
+import com.springsecurityoauth2.client.service.CustomOAuth2UserService;
+import com.springsecurityoauth2.client.service.CustomOidcUserService;
+import com.springsecurityoauth2.client.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
