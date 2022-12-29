@@ -1,0 +1,22 @@
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://syh80883.cafe24.com/syh80883
+    username: syh80883
+    password: abc123!@
+    sql-script-encoding: utf-8
+  messages:
+    basename: messages/messages, messages/error
+
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: false
+        format_sql: true
+        default_batch_fetch_size: 1000
+    open-in-view: false
