@@ -139,7 +139,9 @@
         },
         methods: {
           onclickKaKaoLogin() {
-            this.$emit('onclickKaKaoLogin');
+            // this.$emit('onclickKaKaoLogin');
+
+            location.href = 'http://localhost:8081/oauth2/authorization/kakao'
           },
 
 
@@ -152,14 +154,14 @@
             socialLogin() {
                 this.$emit('socialLogin');
             },
-            socialLoginV2(data) {
-                this.$emit('socialLoginV2', {
-                    accessToken: data.access_token,
-                    refreshToken: data.refresh_token,
-                    expiresIn: data.expires_in,
-                    provider: PROVIDER.KAKAO
-                });
-            },
+            // socialLoginV2(data) {
+            //     this.$emit('socialLoginV2', {
+            //         accessToken: data.access_token,
+            //         refreshToken: data.refresh_token,
+            //         expiresIn: data.expires_in,
+            //         provider: PROVIDER.KAKAO
+            //     });
+            // },
             onKaKaoFailure(data) {
             },
         },

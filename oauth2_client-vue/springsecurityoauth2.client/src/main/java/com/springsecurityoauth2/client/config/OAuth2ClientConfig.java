@@ -19,6 +19,7 @@ public class OAuth2ClientConfig {
     private final CustomOAuth2UserService customOAuth2UserService;
     private final CustomOidcUserService customOidcUserService;
     private final CustomUserDetailsService customUserDetailsService;
+    private final AuthSuccessHandler authSuccessHandler;
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
@@ -44,7 +45,13 @@ public class OAuth2ClientConfig {
                 .cors().disable()
                 .formLogin().disable();
 
-        http.formLogin().loginPage("/login").loginProcessingUrl("/loginProc").defaultSuccessUrl("http://localhost:3000").permitAll();
+//        http.oauth2Client()
+//                .
+
+        http.formLogin().loginPage("/login").loginProcessingUrl("/loginProc").successHandler(authSuccessHandler)
+//                .defaultSuccessUrl("http://localhost:3000")
+                .permitAll();
+
         http.oauth2Login(oauth2 -> oauth2.userInfoEndpoint(
                 userInfoEndpointConfig -> userInfoEndpointConfig
                         .userService(customOAuth2UserService)  // OAuth2

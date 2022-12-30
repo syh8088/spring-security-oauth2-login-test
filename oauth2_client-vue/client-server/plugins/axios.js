@@ -36,7 +36,7 @@ export default function({ $axios, store, redirect  }) {
         console.log(" ★★★★★★★★★★★★★★API START store.getters['member/isAuthenticated']", store.getters['member/isAuthenticated'])
         if(process.client) {
             console.log("★★★★★★★★★★★★★★API START ")
-
+            console.log("config", config)
         }
 
     });

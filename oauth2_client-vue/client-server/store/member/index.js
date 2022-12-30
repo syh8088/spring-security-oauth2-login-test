@@ -81,7 +81,7 @@ export const actions = {
 
     async kaKaoLogin({ commit, rootState }) {
 
-        const res = await this.$axios.get(`http://localhost:8081/oauth2/authorization/kakao`, { header: { 'Access-Control-Allow-Origin': "*" } });
+        const res = await this.$axios.get(`http://localhost:8081/oauth2/authorization/kakao`, { headers: { 'Access-Control-Allow-Origin': "1111*" } });
 console.log("res.data", res.data)
         // const { access_token } = res.data;
         //
